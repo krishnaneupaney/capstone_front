@@ -14,7 +14,6 @@ function BookApi() {
   return(
       <div>
     <h1>Game of Thrones Books</h1>
-    <h2>Fetch a list from an API and display it</h2>
 
     {/* Fetch data from API */}
     <div>

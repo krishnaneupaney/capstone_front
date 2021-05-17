@@ -38,3 +38,12 @@
 .section-contact h5 {
   margin-bottom: 30px;
 }
+
+.footer-container {
+  background-color: #8c9795;
+  padding: 4rem 02 2rem 0;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: right;
+}

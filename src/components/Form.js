@@ -32,7 +32,7 @@ function Form(props) {
                 
                 <div className = "mb-3">
                 <label htmlFor = "title" className = "form-label">Title</label>
-                <input type="text" className = "form-control" id="title" placeholder = "enter your shit" 
+                <input type="text" className = "form-control" id="title" placeholder = "enter description" 
                 value = {title} onChange = {e => setTitle(e.target.value)}
                 />
                 <label htmlFor = "description" className = "form-label">Description</label>
@@ -41,7 +41,7 @@ function Form(props) {
                 value = {description} onChange = {e => setDescription(e.target.value)}
                 />
                 <br />
-                <input type="file" className = 'form-control' id="product_image"
+                <input type="file" className = 'form-control' id="upload_image"
                 value = {upload_image} onChange = {e => setUpload_Image(e.target.value)} /> 
                 <br />
                 <input type="number" className= "form-label" placeholder="enter your price"
