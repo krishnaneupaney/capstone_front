@@ -16,7 +16,7 @@ export default class APIProduct {
     static AddProduct (body, token) {
         return fetch('http://127.0.0.1:8000/capstoneapi/products/', {
             'method': 'POST',
-            Headers: {
+            headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Token ${token}`
         }, 

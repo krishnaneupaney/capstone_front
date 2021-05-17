@@ -1,15 +1,31 @@
 import './App.css';
-import {useState, useEffect} from 'react'
+import {useState, useEffect, Component} from 'react'
 import ProductList from './components/ProductList';
 import Form from './components/Form';
 import { useCookies } from 'react-cookie';
 import { useHistory } from 'react-router-dom';
+// import axios from 'axios';
+import BookApi from './components/BookApi';
+import Navbar from './components/Navbar';
+import ProductPage from './pages/ProductPage'
+import Footer from './components/Footer';
+import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom'
+// import Upload from './components/Upload';
 
 
 function App() {
-//   fileSelectedHandler = event => {
-//     console.log(event.target)
-// }
+// const [books, setBooks] = useState(null);
+
+//   const fetchData = async () => {
+//     const response = await axios.get(
+//       'https://www.anapioficeandfire.com/api/books?pageSize=300'
+//     );
+
+//     setBooks(response.data);
+//   };
+
+
+
   const [products, setProducts] = useState([])
   const [editProduct, setEditProduct] = useState(null)
   const [token, setToken, removeToken] = useCookies(['mytoken'])
@@ -22,12 +38,15 @@ function App() {
       headers: {
         'Content-type': 'application/json',
         'Authorization': `Token ${token['mytoken']}`
+        
       }
-    })
+    }  )
     .then(resp => resp.json())
     .then(resp => setProducts(resp))
     .catch(error => console.log(error))
   }, [])
+
+
 
   useEffect(() => {
     if(!token['mytoken']){
@@ -35,6 +54,8 @@ function App() {
         // window.location.href = '/'
     }
 }, [token])
+
+
 
   const editBtn = (product) => {
         setEditProduct(product)
@@ -50,7 +71,7 @@ function App() {
     setProducts(new_product)
   }
    
-  
+ 
   const productForm = () => {
     setEditProduct({title: '', description:'', upload_image:'', price:''})
   }
@@ -73,19 +94,35 @@ function App() {
   // const logoutBtn = () => {
   //   removeToken(['mytoken'])
   // }
-  return (
-    <div className="App">
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("")
+  const [upload_image, setUploadImage] = useState("")
+  const [price, setPrice] = useState("")
 
-      <div className = "row">
+
+  return (   
+    <> 
+   
+    {/* <Switch>
+      <BookApi />
+      <Route path='/book' exact component={BookApi} />
+    </Switch> */}
+
+    <div className="navbar">
+     {/* <BookApi /> */}
+     {/* <div className="lmao">
+       <Upload />
+     </div>
+  */}
+    <div className = "row">
       <div className = "col">
         <br />
-        <h3> Axcess Products and Services </h3>
         <br />
-
+       
       <div className = "col">
+      {/* <img src={product_image} alt="" id="img" className="img" /> */}
         <button onClick = {productForm} className = "btn btn-primary">Add Product</button>
       </div>
-
       {/* <div className = "col">
         <button onClick = {logoutBtn} className = "btn btn-primary">Logout</button>
       </div> */}
@@ -97,10 +134,15 @@ function App() {
 
         {editProduct ? <Form product = {editProduct} updatedInformation = {updatedInformation} addedInformation = {addedInformation} /> : null}
         {/* <Form product = {editProduct} /> */}
-        {/* <input type="file" onChange={this.fileSelectedHandler} />  */}
+
+      <div className="footer">
+        <Footer />
+      </div>
 
     </div>
-  );
+    </>
 
+  );
 }
+
 export default App;

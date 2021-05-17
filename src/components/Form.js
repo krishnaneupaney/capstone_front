@@ -41,7 +41,7 @@ function Form(props) {
                 value = {description} onChange = {e => setDescription(e.target.value)}
                 />
                 <br />
-                <input type="file" className = 'form-control' id="image"
+                <input type="file" className = 'form-control' id="product_image"
                 value = {upload_image} onChange = {e => setUpload_Image(e.target.value)} /> 
                 <br />
                 <input type="number" className= "form-label" placeholder="enter your price"

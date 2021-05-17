@@ -1,6 +1,10 @@
 import React from 'react'
 import APIProduct from '../APIProduct';
 import {useCookies} from 'react-cookie';
+import { useParams } from 'react-router-dom'
+// import Loader from '../components/Loader'
+// import { useAxiosGet } from '../Hooks/HttpRequests'
+
 
 function ProductList(props) {
 
@@ -18,6 +22,8 @@ function ProductList(props) {
     }
 
     return (
+      // <div className="container mx-auto">
+      //       {content}
         <div>
             
         {props.products && props.products.map(product => {
@@ -25,12 +31,12 @@ function ProductList(props) {
             <div key = {product.id}>
               <h2>{product.title}</h2>
               <p>{product.description}</p>
-              <p>{product.product_image}</p>
+              <img src={product.product_image} />
               <p>{product.price}</p>
 
             <div className = "row">
             <div className = "col-md-1">
-            <button className = "btn btn-primary" onClick = {() => editBtn(product)}>Update</button>    
+            <button className = "btn btn-primary" onClick = {() => editBtn(product)}>Edit</button>    
             </div>   
 
             <div className = "col">
@@ -42,8 +48,8 @@ function ProductList(props) {
             </div>
           )
         })}
-
         </div>
+        // </div>
     )
 }
 
