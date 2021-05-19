@@ -1,9 +1,11 @@
 {
   "name": "capstoneapp",
   "version": "0.1.0",
+  "engines" : {
+    "node": "14.16.0"
+  },
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^4.11.4",
     "@material-ui/styles": "^4.11.4",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -12,7 +14,6 @@
     "axios": "^0.21.1",
     "babel-preset-react": "^6.24.1",
     "bootstrap": "^5.0.0",
-    "firebase": "^8.6.1",
     "fontawesome": "^5.6.3",
     "graphql": "^15.5.0",
     "material-ui": "^0.20.2",
@@ -54,5 +55,24 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "this is awesome",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krishnaneupaney/capstone_front.git"
+  },
+  "keywords": [
+    "knreactapp"
+  ],
+  "author": "krishna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krishnaneupaney/capstone_front/issues"
+  },
+  "homepage": "https://github.com/krishnaneupaney/capstone_front#readme"
 }
+
+
+
