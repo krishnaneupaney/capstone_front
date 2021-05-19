@@ -4,25 +4,28 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Route, BrowserRouter} from 'react-router-dom';
+import {Route, BrowserRouter, Switch, Link} from 'react-router-dom';
 import Login from './components/Login';
 import {CookiesProvider} from 'react-cookie';
 import Navbar from './components/Navbar';
 import BookApi from './components/BookApi';
 import Upload from './components/Upload'
-import Cart from './components/Cart'
+import SignUp from './components/SignUpForm';
+import SignUpContainer from './components/SignUpContainer';
 
 
 function Router(){
   return(
     <CookiesProvider>
-    <BrowserRouter>
+    <BrowserRouter>    
     <Navbar />
-    <Route exact path = "/navbar" component = {Navbar} />
-    <Route exact path = "/upload" component = {Upload} />
-    <Route exact path = "/book" component = {BookApi} />
-    <Route exact path = "/cart" component = {Cart} />
-    <Route exact path = "/" component = {App} />
+    <Switch>
+    <Route exact path = '/' component = {Login} />  
+    <Route exact path = '/upload' component = {Upload} /> 
+    <Route exact path = '/book' component = {BookApi} />
+    <Route exact path = "/signup" component = {SignUpContainer} />
+    <Route exact path = "/products" component = {App} />
+    </Switch>
     </BrowserRouter>
     </CookiesProvider>
   )
@@ -32,7 +35,7 @@ function Router(){
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router />
+      <Router />
   </React.StrictMode>,
   document.getElementById('root')
 );

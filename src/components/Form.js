@@ -1,6 +1,9 @@
+
 import React, { useState, useEffect } from 'react';
 import APIProduct from '../APIProduct';
 import {useCookies} from 'react-cookie';
+
+
 
 function Form(props) {
     const [title, setTitle] = useState(props.product.title)
@@ -8,7 +11,8 @@ function Form(props) {
     const [upload_image, setUpload_Image] = useState(props.product.upload_image)
     const [price, setPrice] = useState(props.product.price)
     const [token] = useCookies(['mytoken'])
-
+    const reader = new FileReader();
+    
     useEffect(() => {
         setTitle(props.product.title)
         setDescription(props.product.description)
@@ -23,6 +27,7 @@ function Form(props) {
 
     const addProduct = () => {
         APIProduct.AddProduct({title, description, upload_image, price}, token['mytoken'])
+
         .then(resp => props.addedInformation(resp))
     }
 
@@ -42,6 +47,7 @@ function Form(props) {
                 />
                 <br />
                 <input type="file" className = 'form-control' id="upload_image"
+
                 value = {upload_image} onChange = {e => setUpload_Image(e.target.value)} /> 
                 <br />
                 <input type="number" className= "form-label" placeholder="enter your price"

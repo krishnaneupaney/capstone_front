@@ -10,25 +10,22 @@ import Navbar from './components/Navbar';
 import ProductPage from './pages/ProductPage'
 import Footer from './components/Footer';
 import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom'
-// import Upload from './components/Upload';
+import Upload from './components/Upload';
+// import firebase from 'firebase/app';
+import Home from './Home';
+import SignUpContainer from './components/SignUpContainer';
+import APIProduct from './APIProduct';
+import SignUp from './components/SignUpForm';
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 
 
 function App() {
-// const [books, setBooks] = useState(null);
-
-//   const fetchData = async () => {
-//     const response = await axios.get(
-//       'https://www.anapioficeandfire.com/api/books?pageSize=300'
-//     );
-
-//     setBooks(response.data);
-//   };
-
-
 
   const [products, setProducts] = useState([])
   const [editProduct, setEditProduct] = useState(null)
   const [token, setToken, removeToken] = useCookies(['mytoken'])
+
+ 
 
   let history = useHistory();
 
@@ -40,7 +37,7 @@ function App() {
         'Authorization': `Token ${token['mytoken']}`
         
       }
-    }  )
+    })
     .then(resp => resp.json())
     .then(resp => setProducts(resp))
     .catch(error => console.log(error))
@@ -48,10 +45,10 @@ function App() {
 
 
 
-  useEffect(() => {
+useEffect(() => {
     if(!token['mytoken']){
-        history.push('/')
-        // window.location.href = '/'
+        // history.push('/')
+        window.location.href = '/'
     }
 }, [token])
 
@@ -91,41 +88,48 @@ function App() {
     setProducts(new_products)
   }
 
-  // const logoutBtn = () => {
-  //   removeToken(['mytoken'])
-  // }
+  const logoutBtn = () => {
+    removeToken(['mytoken'])
+  }
+
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("")
   const [upload_image, setUploadImage] = useState("")
   const [price, setPrice] = useState("")
 
-
+ const reader = new FileReader();
   return (   
     <> 
    
-    {/* <Switch>
-      <BookApi />
-      <Route path='/book' exact component={BookApi} />
-    </Switch> */}
+   <Router>
+    <Switch>
+      {/* <Route path='/' exact component={Login} /> */}
+      {/* <Route path='/upload' component={Upload} />
+      <Route path='/products' component={BookApi} />
+      <Route path='/signup' component={SignUp} /> */}
+        <MuiThemeProvider>
+        {/* <SignUpContainer /> */}
+        <ProductList />
+        </MuiThemeProvider>
+       
+      
+    </Switch>
+    </Router>
 
-    <div className="navbar">
-     {/* <BookApi /> */}
-     {/* <div className="lmao">
-       <Upload />
-     </div>
-  */}
+
+    <div className="app">
     <div className = "row">
       <div className = "col">
+        <br /> 
+        <div className = "col-shit">
+        <button onClick = {logoutBtn} className = "btn btn-primary">Logout</button>
+      </div>
         <br />
-        <br />
-       
-      <div className = "col">
-      {/* <img src={product_image} alt="" id="img" className="img" /> */}
+        <div className = "col">
         <button onClick = {productForm} className = "btn btn-primary">Add Product</button>
       </div>
-      {/* <div className = "col">
-        <button onClick = {logoutBtn} className = "btn btn-primary">Logout</button>
-      </div> */}
+
+     
 
         </div>
         </div>
@@ -134,7 +138,7 @@ function App() {
 
         {editProduct ? <Form product = {editProduct} updatedInformation = {updatedInformation} addedInformation = {addedInformation} /> : null}
         {/* <Form product = {editProduct} /> */}
-
+      <BookApi />
       <div className="footer">
         <Footer />
       </div>

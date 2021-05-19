@@ -31,7 +31,7 @@ function ProductList(props) {
             <div key = {product.id}>
               <h2>{product.title}</h2>
               <p>{product.description}</p>
-              <img src={product.product_image} />
+              <img src="{{ product.product_image}} "/>
               <p>{product.price}</p>
 
             <div className = "row">

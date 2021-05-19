@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 function BookApi() {
     const [books, setBooks] = useState(null);
@@ -10,6 +10,8 @@ function BookApi() {
 
     setBooks(response.data);
   };
+
+
 
   return(
       <div>
@@ -40,6 +42,8 @@ function BookApi() {
                 <p>📖Book: {book.numberOfPages} pages</p>
                 <p>🏘️Country: {book.country}</p>
                 <p>⏰Published Date: {cleanedDate}</p>
+                <button onClick={book}>Add Book</button>
+                <button>Edit</button>
               </div>
             </div>
           );
