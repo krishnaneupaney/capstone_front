@@ -21,9 +21,9 @@ function Router(){
     <Navbar />
     <Switch>
     <Route exact path = '/' component = {Login} />  
-    {/* <Route exact path = '/upload' component = {Upload} /> 
+    <Route exact path = '/upload' component = {Upload} /> 
     <Route exact path = '/book' component = {BookApi} />
-    <Route exact path = "/signup" component = {SignUpContainer} /> */}
+    <Route exact path = "/signup" component = {SignUpContainer} />
     <Route exact path = "/products" component = {App} />
     </Switch>
     </BrowserRouter>
