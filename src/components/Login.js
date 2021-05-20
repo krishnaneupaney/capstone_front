@@ -31,19 +31,19 @@ const RegisterBtn = () => {
 }
     return (
         <div className = "App">
-           {isLogin ? <h1>Please Login</h1> : <h1>Please Register shitty</h1>}
+           {isLogin ? <h1>Please Login</h1> : <h1>Please Register </h1>}
                 <br />
                 <br />
             <div className = "mb-3">
             <label htmlFor = "username" className = "form-label">Username</label>
-            <input type = "text" className = "form-control" id = "username" placeholder = "enter shit" 
+            <input type = "text" className = "form-control" id = "username" placeholder = "enter " 
             value = {username} onChange = {e => setUsername(e.target.value)}
             />
             </div>
 
             <div className = "mb-3">
             <label htmlFor = "password" className = "form-label">Password</label>
-            <input type = "password" className = "form-control" id = "password" placeholder = "enter shit password" 
+            <input type = "password" className = "form-control" id = "password" placeholder = "enter password" 
             value = {password} onChange = {e => setPassword(e.target.value)}
             />
             </div> 
@@ -53,7 +53,7 @@ const RegisterBtn = () => {
             <div className = "mb-3">
                 <br />
                 {isLogin ? <h5>If no account, plz <button className = "btn btn-primary" onClick = {() => setLogin(false)}>Register</button>Here</h5>
-               :  <h5>if you've account, plx <button className = "btn btn-primary" onClick = {() => setLogin(true)}>Login</button></h5> 
+               :  <h5>if you've account, than <button className = "btn btn-primary" onClick = {() => setLogin(true)}>Login</button></h5> 
             }
         </div>
         </div>   
