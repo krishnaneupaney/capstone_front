@@ -1,70 +1,116 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Table of content
 
-In the project directory, you can run:
+[Descriptions](#description)  
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[Techs](#installationsandtech) 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[Login/Register](#loginandregister)  
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+[HomePage](#homepage)  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+[AddPage](#addproduct)  
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+[Books](#bookpage)  
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[API](#api)  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+[Support](#support)  
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[Future Goal](#futuregoal) 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+[Status](#status) 
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+## Description
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This project is attempt to build a marketplace website where users can browse, edit, delete and upload products with title, description, upload image, and update price. 
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `yarn build` fails to minify
+## InstallationsandTech
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+REACT
+DJANGO
+EXPRESS
+POSTGRES SQL
+HEROKU
+Material UI - Styles
+
+
+`pip install django` `pip install djangorestframework`
+
+`pip install psycopg2-binary` 
+
+`django-admin startproject` `create-react-app`
+
+
+## LoginandRegister
+
+<img width="811" alt="Screen Shot 2021-05-21 at 1 37 24 AM" src="https://user-images.githubusercontent.com/79564250/119087419-1c5d9600-b9d5-11eb-8a85-6421d12c27c5.png">
+<img width="973" alt="Screen Shot 2021-05-21 at 1 38 36 AM" src="https://user-images.githubusercontent.com/79564250/119087521-4747ea00-b9d5-11eb-8b85-cbca88c1dfc3.png">
+
+
+
+
+## HomePage!
+<img width="1272" alt="Screen Shot 2021-05-21 at 1 44 36 AM" src="https://user-images.githubusercontent.com/79564250/119088098-1e742480-b9d6-11eb-8896-6a9c3599817a.png">
+
+
+
+## AddProduct
+
+<img width="879" alt="Screen Shot 2021-05-21 at 1 46 48 AM" src="https://user-images.githubusercontent.com/79564250/119088276-6b57fb00-b9d6-11eb-9be5-8330735c5bf6.png">
+
+
+## BookPage
+<img width="857" alt="Screen Shot 2021-05-21 at 2 07 22 AM" src="https://user-images.githubusercontent.com/79564250/119090190-4a44d980-b9d9-11eb-9cea-b3d7f43d63d1.png">
+
+
+## API
+
+External: https://www.anapioficeandfire.com/api/books?pageSize=300
+Internal: https://sheltered-stream-73342.herokuapp.com/admin/capstoneapi/product/
+
+
+
+## Support
+
+please visit https://docs.djangoproject.com/en/3.2/
+
+
+
+## Futuregoal
+
+I cound't get my app render the image so future goal is definitely to make it works. 
+
+
+
+## Contribution
+
+Pull requests are welcome.
+
+
+
+
+## License MIT
+
+
+
+## Status 
+
+Progress..
